@@ -10,7 +10,7 @@ const navConfig: { label: string; href: string }[] = [
 
 export default function Home() {
   return (
-    <div className="max-w-4xl mx-auto text-center py-10">
+    <main className="max-w-4xl mx-auto text-center py-10">
       <motion.h1 className="text-5xl font-bold text-brand">
         Declarative Web Animations with Motion
       </motion.h1>
@@ -23,6 +23,6 @@ export default function Home() {
           </Link>
         ))}
       </div>
-    </div>
+    </main>
   )
 }
