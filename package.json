@@ -1,4 +1,5 @@
 {
+  "homepage": "https://jontoye.github.io/motion-dev-demo",
   "name": "motion-dev-demo",
   "version": "0.1.0",
   "private": true,
@@ -7,7 +8,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint --ext \".js,.jsx,.ts,.tsx\" --ignore-path .gitignore .",
-    "lint:fix": "eslint --fix --ext \".js,.jsx,.ts,.tsx\" --ignore-path .gitignore ."
+    "lint:fix": "eslint --fix --ext \".js,.jsx,.ts,.tsx\" --ignore-path .gitignore .",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "motion": "^12.4.2",
@@ -31,6 +34,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^4.6.2",
+    "gh-pages": "^6.3.0",
     "postcss": "^8",
     "prettier": "^2.8.8",
     "tailwindcss": "^3.4.1",
