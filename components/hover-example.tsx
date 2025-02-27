@@ -4,15 +4,13 @@ import { Variants } from 'motion/react'
 import * as motion from 'motion/react-client'
 import Link from 'next/link'
 import { useState } from 'react'
-import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
 export function HoverExample() {
   return (
     <>
-      <div className="border">
+      <div className="flex space-x-1">
         <nav className="relative">
-          <ul className="flex gap-12">
+          <ul className="flex">
             {navConfig.map(({ label, sublinks }) => (
               <MenuItem label={label} subLinks={sublinks} key={label} />
             ))}
@@ -20,15 +18,7 @@ export function HoverExample() {
         </nav>
       </div>
 
-      <SyntaxHighlighter
-        customStyle={{
-          maxHeight: '600px',
-          resize: 'vertical',
-        }}
-        PreTag="div"
-        language="javascript"
-        style={oneDark}
-      >
+      {/* <CodeBlock>
         {`
 const MenuItem = ({ label, subLinks = [] }: MenuItemProps) => {
   const [subMenuState, setSubMenuState] = useState<'visible' | 'hidden'>(
@@ -79,7 +69,7 @@ const MenuItem = ({ label, subLinks = [] }: MenuItemProps) => {
   )
 }
 `}
-      </SyntaxHighlighter>
+      </CodeBlock> */}
     </>
   )
 }
@@ -110,25 +100,6 @@ const MenuItem = ({ label, subLinks = [] }: MenuItemProps) => {
       },
     },
   }
-  // const subMenuVariants: Variants = {
-  //   visible: {
-  //     opacity: 1,
-  //     scaleY: 1,
-  //     originY: 0,
-  //     display: 'block',
-  //     transition: {
-  //       damping: 0,
-  //     },
-  //   },
-  //   hidden: {
-  //     opacity: 0,
-  //     scaleY: 0,
-  //     originY: 0,
-  //     transitionEnd: {
-  //       display: 'none',
-  //     },
-  //   },
-  // }
 
   return (
     <motion.li
@@ -136,9 +107,11 @@ const MenuItem = ({ label, subLinks = [] }: MenuItemProps) => {
       onHoverStart={() => setSubMenuState('visible')}
       onHoverEnd={() => setSubMenuState('hidden')}
     >
-      <span className="px-4 cursor-pointer text-button-primary">{label}</span>
+      <span className="px-4 cursor-pointer text-white hover:opacity-70 transition-opacity">
+        {label}
+      </span>
       <motion.ul
-        className="border-slate-400/25 border-2 w-36 absolute top-14 bg-button-primary"
+        className="border-slate-700/25 border-2 w-36 rounded-md absolute top-14 px-3"
         animate={subMenuState}
         variants={subMenuVariants}
         initial="hidden"

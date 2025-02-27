@@ -1,8 +1,15 @@
 import React from 'react'
 import * as motion from 'motion/react-client'
+import { CodeBlock } from './code-block'
 
 export function DragExample() {
-  return <motion.div drag style={box} />
+  return (
+    <motion.div className="flex gap-8">
+      <motion.div drag style={box} whileDrag={{ scale: 1.2 }} />
+      <motion.div drag style={box} whileDrag={{ scale: 1.2 }} />
+      <motion.div drag style={box} whileDrag={{ scale: 1.2 }} />
+    </motion.div>
+  )
 }
 
 const box = {
