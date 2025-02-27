@@ -1,6 +1,4 @@
-import React from 'react'
 import * as motion from 'motion/react-client'
-import { CodeBlock } from './code-block'
 
 export function DragExample() {
   return (

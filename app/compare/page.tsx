@@ -72,30 +72,8 @@ export default function ComparePage() {
 }
 
 const Modal = ({ handleClose }: { handleClose: () => void }) => {
-  const dropIn = {
-    hidden: {
-      y: '-100vh',
-      opacity: 0,
-    },
-    visible: {
-      y: '0',
-      opacity: 1,
-      transition: {
-        duration: 0.1,
-        type: 'spring',
-        damping: 25,
-        stiffness: 500,
-      },
-    },
-    exit: {
-      y: '100vh',
-      opacity: 0,
-    },
-  }
-
   const variants = {
     hidden: {
-      // y: 400,
       scale: 0.7,
       opacity: 0,
     },
@@ -105,36 +83,9 @@ const Modal = ({ handleClose }: { handleClose: () => void }) => {
       opacity: 1,
       transition: {
         duration: 0.3,
-        // type: 'spring',
-        // damping: 25,
-        // stiffness: 500,
       },
     },
     exit: {
-      // y: 100,
-      // scale: 0.5,
-      opacity: 0,
-    },
-  }
-
-  const badSuspension = {
-    hidden: {
-      y: '-100vh',
-      opacity: 0,
-      transform: 'scale(0) rotateX(-360deg)',
-    },
-    visible: {
-      y: '-25vh',
-      opacity: 1,
-      transition: {
-        duration: 0.2,
-        type: 'spring',
-        damping: 15,
-        stiffness: 500,
-      },
-    },
-    exit: {
-      y: '-100vh',
       opacity: 0,
     },
   }
